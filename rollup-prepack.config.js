@@ -3,7 +3,7 @@ import { sharePlugins, shareRegexesOfPackages } from './share-config/rollup.js';
 export default {
 	external: shareRegexesOfPackages(),
 
-	input: ['src/index.ts'],
+	input: ['src/omit-undefined.ts'],
 	output: [
 		{
 			dir: './',
