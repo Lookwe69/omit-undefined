@@ -1,0 +1,20 @@
+name: CI
+
+on:
+    push:
+        branches:
+            - main
+            - next
+    pull_request:
+
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        container: node:22
+        steps:
+            - uses: actions/checkout@v4
+
+            - run: npm i
+            - run: npm run lint
+            - run: npm run format
+            - run: npm run test
