@@ -5,6 +5,10 @@
 	"bugs": {
 		"url": "https://github.com/Lookwe69/omit-undefined/issues"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Lookwe69/omit-undefined.git"
+	},
 	"keywords": [
 		"omit",
 		"undefined",
@@ -26,7 +30,7 @@
 		"lint:ts": "tsc --noEmit",
 		"format": "prettier --check --ignore-path .gitignore .",
 		"format:fix": "npm run format -- --write && npm run format -- --write --plugin=@homer0/prettier-plugin-jsdoc",
-		"test": "npm run build && node --test",
+		"test": "npm run build && node --test \"./dist/*.test.js\"",
 		"prepare-pack": "npm run clean && npm run build:prepack",
 		"prepack": "npm run prepare-pack",
 		"semantic-release": "semantic-release"
