@@ -11,7 +11,8 @@
 		"rootDir": "./src",
 		"moduleResolution": "nodenext",
 		"noUncheckedSideEffectImports": true,
-		"erasableSyntaxOnly": true
+		"erasableSyntaxOnly": true,
+		"types": ["node"]
 	},
 	"include": ["src/**/*.ts"],
 	"exclude": []
