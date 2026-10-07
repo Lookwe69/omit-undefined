@@ -68,6 +68,52 @@ const anotherValidUser: DefinedUser = {
 // const invalidUser: DefinedUser = {};
 ```
 
+## Omitting nullable properties
+
+If you also want to remove properties that are `null` (in addition to `undefined`), you can use `omitNullable` and
+its `OmitNullable<T>` type:
+
+```js
+import { omitNullable, OmitNullable } from '@lookwe/omit-undefined';
+
+const cleanedObject = omitNullable({
+	id: undefined,
+	name: null,
+	isActive: true,
+});
+
+console.log(cleanedObject);
+// {
+//   isActive: true,
+// }
+```
+
+### `OmitNullable<T>` Type
+
+This utility type helps you define the shape of an object where properties that could potentially be `null` or
+`undefined` in the original type `T` are now optional and guaranteed to not be `null` nor `undefined`.
+
+```ts
+import { OmitNullable } from '@lookwe/omit-undefined';
+
+type User = {
+	id: number | undefined;
+	username: string | null;
+	email?: string | undefined;
+	roles: string[];
+};
+
+type DefinedUser = OmitNullable<User>;
+
+// DefinedUser will be:
+// {
+//   id?: number;
+//   username?: string;
+//   email?: string;
+//   roles: string[];
+// }
+```
+
 ## Usefulness with `exactOptionalPropertyTypes`
 
 With the introduction of the `exactOptionalPropertyTypes` flag in TypeScript 4.4, a stricter distinction is made between an optional property being absent and being explicitly set to `undefined`. However, many existing utility types and even some libraries don't fully account for this nuanced behavior. They often treat optional properties (`propertyName?: Type`) as being equivalent to properties that can explicitly be `undefined` (`propertyName: Type | undefined`).
