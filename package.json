@@ -49,7 +49,7 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@homer0/prettier-plugin-jsdoc": "^11.0.1",
+		"@homer0/prettier-plugin-jsdoc": "^12.0.0",
 		"@ianvs/prettier-plugin-sort-imports": "^4.7.0",
 		"@rollup/plugin-node-resolve": "^16.0.3",
 		"@rollup/plugin-replace": "^6.0.3",
