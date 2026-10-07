@@ -49,7 +49,7 @@ export function omitNullable<const T extends object>(obj: T): OmitNullable<T> {
 	const cleanedObj = { ...obj };
 
 	for (const key in cleanedObj) {
-		if (cleanedObj[key] === null || cleanedObj[key] === undefined) {
+		if (cleanedObj[key] == null) {
 			delete cleanedObj[key];
 		}
 	}
